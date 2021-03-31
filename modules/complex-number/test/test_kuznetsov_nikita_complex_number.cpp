@@ -2,7 +2,6 @@
 
 #include <gtest/gtest.h>
 
-#include <cmath>
 #include <tuple>
 #include "include/complex_number.h"
 
@@ -40,9 +39,8 @@ TEST_P(Kuznetsov_Nikita_ComplexNumberTest_param, Can_Multiply_Elements) {
 
   ASSERT_EQ(result, ComplexNumber(re * re - im * im, re * im + im * re));
 }
-
 INSTANTIATE_TEST_CASE_P(/**/, Kuznetsov_Nikita_ComplexNumberTest_param,
   testing::Combine(
     testing::Values(-10.0, 2.0),
-    testing::Values(5.0, -4.0)
-  ));
+    testing::Values(5.0, -4.0))
+);

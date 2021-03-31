@@ -50,7 +50,8 @@ TEST_P(Kuznetsov_Nikita_ComplexNumberTest_Param, Can_Multiply_Elements) {
   ComplexNumber result2 = z3 * z4;
 
   ASSERT_EQ(result, ComplexNumber(re * re - im * im, re * im + im * re));
-  ASSERT_EQ(result2, ComplexNumber(re2 * re2 - im2 * im2, re2 * im2 + im2 * re2));
+  ASSERT_EQ(result2, ComplexNumber(re2 * re2 - im2 * im2,
+    re2 * im2 + im2 * re2));
 }
 INSTANTIATE_TEST_CASE_P(/**/, Kuznetsov_Nikita_ComplexNumberTest_Param,
   testing::Combine(

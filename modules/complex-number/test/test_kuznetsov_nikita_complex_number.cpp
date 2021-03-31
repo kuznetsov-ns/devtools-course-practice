@@ -6,17 +6,6 @@
 
 #include "include/complex_number.h"
 
-TEST(Kuznetsov_Nikita_ComplexNumberTest, Can_Copy_Element) {
-    double re = 3.0;
-    double im = 2.0;
-    ComplexNumber z1(re, im);
-
-    ComplexNumber z2(z1);
-    bool sw = z1 == z2;
-
-    ASSERT_TRUE(sw);
-}
-
 typedef testing::TestWithParam<std::tuple<double, double, double, double>>
 Kuznetsov_Nikita_ComplexNumberTest_Param;
 TEST_P(Kuznetsov_Nikita_ComplexNumberTest_Param, Can_Sum_Elements) {
@@ -34,6 +23,23 @@ TEST_P(Kuznetsov_Nikita_ComplexNumberTest_Param, Can_Sum_Elements) {
 
   ASSERT_EQ(sum, ComplexNumber(2 * re, 2 * im));
   ASSERT_EQ(sum2, ComplexNumber(2 * re2, 2 * im2));
+}
+
+TEST_P(Kuznetsov_Nikita_ComplexNumberTest_Param, Can_Subtract_Elements) {
+  double re = std::get<0>(GetParam());
+  double im = std::get<1>(GetParam());
+  double re2 = std::get<2>(GetParam());
+  double im2 = std::get<3>(GetParam());
+  ComplexNumber z1(re, im);
+  ComplexNumber z2(re, im);
+  ComplexNumber z3(re2, im2);
+  ComplexNumber z4(re2, im2);
+
+  ComplexNumber sub = z1 - z2;
+  ComplexNumber sub2 = z3 - z4;
+
+  ASSERT_EQ(sub, ComplexNumber(re - re, im - im));
+  ASSERT_EQ(sub2, ComplexNumber(re - re, im - im));
 }
 
 TEST_P(Kuznetsov_Nikita_ComplexNumberTest_Param, Can_Multiply_Elements) {
@@ -54,9 +60,9 @@ TEST_P(Kuznetsov_Nikita_ComplexNumberTest_Param, Can_Multiply_Elements) {
     re2 * im2 + im2 * re2));
 }
 INSTANTIATE_TEST_CASE_P(/**/, Kuznetsov_Nikita_ComplexNumberTest_Param,
-  testing::Combine(
-    testing::Values(-10.0, 2.0),
-    testing::Values(5.0, -4.0),
-    testing::Values(0.0, 1.0),
-    testing::Values(0.0, 0.0))
+  testing::Values(
+    std::make_tuple(-10.0, 2.0, 3.0, -5.0),
+    std::make_tuple(5.0, -4.0, -1.5, 10.0),
+    std::make_tuple(0.0, 1.0, 0.0, 0.0),
+    std::make_tuple(0.0, 0.0, 0.0, 0.0))
 );

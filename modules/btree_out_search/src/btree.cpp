@@ -1,6 +1,6 @@
 ﻿  // Copyright 2021 Kuznetsov Nikita
 
-#include <queue>
+#include <malloc.h>
 #include "include/btree.h"
 
 struct tnode* addtree(struct tnode* p, int x) {

@@ -10,5 +10,5 @@ struct tnode {
 };
 
 struct tnode* addtree(tnode* p, int x);
-bool search(tnode* p, int x);
+int search(tnode* p, int x);
 #endif  // MODULES_BTREE_OUT_SEARCH_INCLUDE_BTREE_H_

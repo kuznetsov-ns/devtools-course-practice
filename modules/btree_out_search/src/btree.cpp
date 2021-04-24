@@ -16,15 +16,14 @@ tnode* addtree(tnode* p, int x) {
   return p;
 }
 
-bool search(tnode* p, int x) {
+int search(tnode* p, int x) {
   if (p != NULL) {
     if (x == p->value) {
-      return true;
+      return x;
     } else {
       search(p->left, x);
       search(p->right, x);
     }
-  } else {
-    return false;
-  }
+  } else
+      return -1;
 }

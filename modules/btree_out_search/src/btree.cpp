@@ -3,9 +3,9 @@
 #include <malloc.h>
 #include "include/btree.h"
 
-struct tnode* addtree(struct tnode* p, int x) {
+tnode* addtree(tnode* p, int x) {
   if (p == NULL) {
-    p = (struct tnode*)malloc(sizeof(struct tnode));
+    p = (tnode*)malloc(sizeof(tnode));
     p->value = x;
     p->left = p->right = NULL;
   } else if (x < p->value) {
@@ -16,7 +16,7 @@ struct tnode* addtree(struct tnode* p, int x) {
   return p;
 }
 
-bool search(struct tnode* p, int x) {
+bool search(tnode* p, int x) {
   if (p != NULL) {
     if (x == p->value) {
       return true;

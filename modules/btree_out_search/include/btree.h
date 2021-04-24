@@ -5,10 +5,10 @@
 
 struct tnode {
   int value;
-  struct tnode* left;
-  struct tnode* right;
+  tnode* left;
+  tnode* right;
 };
 
-struct tnode* addtree(struct tnode* p, int x);
-bool search(struct tnode* p, int x);
+struct tnode* addtree(tnode* p, int x);
+bool search(tnode* p, int x);
 #endif  // MODULES_BTREE_OUT_SEARCH_INCLUDE_BTREE_H_

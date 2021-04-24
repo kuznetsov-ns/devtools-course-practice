@@ -22,3 +22,13 @@ TEST(BINARY_TREE, CAN_SEARCH) {
   }
   EXPECT_TRUE(search(root, search_value));
 }
+
+TEST(BINARY_TREE, CAN_SEARCH_WHEN_NOT_FOUND) {
+  tnode* root;
+  root = NULL;
+  int search_value = -15;
+  for (int i = 0; i < 100; i++) {
+    root = addtree(root, i);
+  }
+  EXPECT_FALSE(search(root, search_value));
+}

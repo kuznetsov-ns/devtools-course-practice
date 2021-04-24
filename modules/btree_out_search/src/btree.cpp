@@ -20,11 +20,12 @@ bool search(tnode* p, int x) {
   if (p != NULL) {
     if (x == p->value) {
       return true;
-    } else {
+    }
+    else {
       search(p->left, x);
       search(p->right, x);
     }
-  } else {
+  } else if (p == NULL) {
     return false;
   }
 }

@@ -66,3 +66,25 @@ TEST(BINARY_TREE, CAN_SEARCH_WHEN_NOT_FOUND2) {
   }
   EXPECT_TRUE(NULL == find(root, search_value));
 }
+
+TEST(BINARY_TREE, CORRECT_SEARCH1) {
+  tnode* root;
+  root = NULL;
+  int search_value = 50;
+  for (int i = 100; i > 0; i--) {
+    root = addtree(root, i);
+  }
+  tnode* result = find(root, search_value);
+  EXPECT_EQ(result->value, search_value);
+}
+
+TEST(BINARY_TREE, CORRECT_SEARCH2) {
+  tnode* root;
+  root = NULL;
+  int search_value = 20;
+  for (int i = 0; i < 10; i++) {
+    root = addtree(root, i);
+  }
+  tnode* result = find(root, search_value);
+  EXPECT_TRUE(result == NULL);
+}

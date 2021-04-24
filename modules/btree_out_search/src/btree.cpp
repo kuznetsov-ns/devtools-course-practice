@@ -28,20 +28,3 @@ bool search(struct tnode* p, int x) {
     return false;
   }
 }
-
-void treePrint(tnode* root) {
-  if (root == NULL) {
-    return;
-  }
-  std::queue<tnode*> q;
-  q.push(root);
-  while (!q.empty()) {
-    tnode* temp = q.front();
-    q.pop();
-    printf("%d ", temp->value);
-    if (temp->left != NULL)
-      q.push(temp->left);
-    if (temp->right != NULL)
-      q.push(temp->right);
-  }
-}

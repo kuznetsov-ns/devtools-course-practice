@@ -13,15 +13,6 @@ TEST(BINARY_TREE, ADD_VALUE_TO_THE_ROOT) {
   EXPECT_NO_THROW(root = addtree(root, 12));
 }
 
-TEST(BINARY_TREE, CAN_PRINT) {
-  struct tnode* root;
-  root = NULL;
-  for (int i = 0; i < 4; i++) {
-    root = addtree(root, i);
-  }
-  EXPECT_NO_THROW(treePrint(root));
-}
-
 TEST(BINARY_TREE, CAN_SEARCH) {
   struct tnode* root;
   root = NULL;

@@ -8,8 +8,7 @@ struct tnode* addtree(struct tnode* p, int x) {
     p = (struct tnode*)malloc(sizeof(struct tnode));
     p->value = x;
     p->left = p->right = NULL;
-  }
-  else if (x < p->value) {
+  } else if (x < p->value) {
     p->left = addtree(p->left, x);
   } else {
     p->right = addtree(p->right, x);
@@ -39,7 +38,7 @@ void treePrint(tnode* root) {
   while (!q.empty()) {
     tnode* temp = q.front();
     q.pop();
-    std::cout << temp->value << " ";
+    printf("%d ", temp->value);
     if (temp->left != NULL)
       q.push(temp->left);
     if (temp->right != NULL)

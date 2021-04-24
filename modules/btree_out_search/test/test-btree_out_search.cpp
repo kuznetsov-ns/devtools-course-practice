@@ -20,7 +20,7 @@ TEST(BINARY_TREE, CAN_SEARCH) {
   for (int i = 0; i < 10; i++) {
     root = addtree(root, i);
   }
-  EXPECT_EQ(search_value, search(root, search_value));
+  EXPECT_TRUE(NULL != find(root, search_value));
 }
 
 TEST(BINARY_TREE, CAN_SEARCH_WHEN_NOT_FOUND) {
@@ -30,5 +30,5 @@ TEST(BINARY_TREE, CAN_SEARCH_WHEN_NOT_FOUND) {
   for (int i = 0; i < 100; i++) {
     root = addtree(root, i);
   }
-  EXPECT_NE(search_value, search(root, search_value));
+  EXPECT_TRUE(NULL == find(root, search_value));
 }

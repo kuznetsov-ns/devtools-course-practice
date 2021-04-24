@@ -24,6 +24,7 @@ int search(tnode* p, int x) {
       search(p->left, x);
       search(p->right, x);
     }
-  } else
-      return -1;
+  } else {
+    return -1;
+  }
 }

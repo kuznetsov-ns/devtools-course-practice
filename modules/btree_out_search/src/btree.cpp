@@ -5,7 +5,7 @@
 
 tnode* addtree(tnode* p, int x) {
   if (p == NULL) {
-    p = (tnode*)malloc(sizeof(tnode));
+    p = new tnode;
     p->value = x;
     p->left = p->right = NULL;
   } else if (x < p->value) {

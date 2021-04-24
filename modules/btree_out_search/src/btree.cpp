@@ -1,4 +1,4 @@
-﻿//  Copyright 2021 Kuznetsov Nikita
+﻿  // Copyright 2021 Kuznetsov Nikita
 
 #include <queue>
 #include "include/btree.h"

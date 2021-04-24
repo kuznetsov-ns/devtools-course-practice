@@ -1,4 +1,4 @@
-﻿//  Copyright 2021 Kuznetsov Nikita
+﻿  // Copyright 2021 Kuznetsov Nikita
 
 #ifndef MODULES_BTREE_OUT_SEARCH_INCLUDE_BTREE_H_
 #define MODULES_BTREE_OUT_SEARCH_INCLUDE_BTREE_H_

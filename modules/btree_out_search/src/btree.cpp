@@ -5,10 +5,10 @@
 #include "include/btree.h"
 
 tnode* addtree(tnode* tree, int val) {
-  if (tree == NULL) {
+  if (tree == nullptr) {
     tree = new tnode;
     tree->value = val;
-    tree->left = tree->right = NULL;
+    tree->left = tree->right = nullptr;
   } else if (val < tree->value) {
     tree->left = addtree(tree->left, val);
   } else {
@@ -18,23 +18,23 @@ tnode* addtree(tnode* tree, int val) {
 }
 
 tnode* find(tnode* tree, int val) {
-  if (tree == NULL) {
-    return NULL;
+  if (tree == nullptr) {
+    return nullptr;
   }
   if (tree->value == val) {
     return tree;
   }
   if (val <= tree->value) {
-    if (tree->left != NULL) {
+    if (tree->left != nullptr) {
       return find(tree->left, val);
     } else {
-      return NULL;
+      return nullptr;
     }
   } else {
     if (tree->right) {
       return find(tree->right, val);
     } else {
-      return NULL;
+      return nullptr;
     }
   }
 }

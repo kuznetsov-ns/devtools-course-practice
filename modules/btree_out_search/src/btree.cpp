@@ -1,37 +1,38 @@
 ﻿  // Copyright 2021 Kuznetsov Nikita
 
 #include <malloc.h>
+
 #include "include/btree.h"
 
-tnode* addtree(tnode* p, int x) {
-  if (p == NULL) {
-    p = new tnode;
-    p->value = x;
-    p->left = p->right = NULL;
-  } else if (x < p->value) {
-    p->left = addtree(p->left, x);
+tnode* addtree(tnode* tree, int val) {
+  if (tree == NULL) {
+    tree = new tnode;
+    tree->value = val;
+    tree->left = tree->right = NULL;
+  } else if (val < tree->value) {
+    tree->left = addtree(tree->left, val);
   } else {
-    p->right = addtree(p->right, x);
+    tree->right = addtree(tree->right, val);
   }
-  return p;
+  return tree;
 }
 
-tnode* find(tnode* r, int d) {
-  if (r == NULL) {
+tnode* find(tnode* tree, int val) {
+  if (tree == NULL) {
     return NULL;
   }
-  if (r->value == d) {
-    return r;
+  if (tree->value == val) {
+    return tree;
   }
-  if (d <= r->value) {
-    if (r->left != NULL) {
-      return find(r->left, d);
+  if (val <= tree->value) {
+    if (tree->left != NULL) {
+      return find(tree->left, val);
     } else {
       return NULL;
     }
   } else {
-    if (r->right) {
-      return find(r->right, d);
+    if (tree->right) {
+      return find(tree->right, val);
     } else {
       return NULL;
     }

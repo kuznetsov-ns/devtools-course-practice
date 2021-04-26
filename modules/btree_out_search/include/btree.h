@@ -9,6 +9,6 @@ struct tnode {
   tnode* right;
 };
 
-struct tnode* addtree(tnode* p, int x);
-tnode* find(tnode* r, int d);
+struct tnode* addtree(tnode* tree, int val);
+tnode* find(tnode* tree, int val);
 #endif  // MODULES_BTREE_OUT_SEARCH_INCLUDE_BTREE_H_

@@ -64,7 +64,7 @@ std::string BitArrayApplication::operator()(int argc,
         }
         not_null.push_back(num);
       }
-      int max = 0;
+      uint max = 0;
       for (size_t i = 0; i < not_null.size(); i++) {
         if (not_null[i] > max)
           max = not_null[i];

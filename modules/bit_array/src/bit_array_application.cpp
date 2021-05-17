@@ -79,7 +79,7 @@ std::string BitArrayApplication::operator()(int argc,
       }
       std::ostringstream stream;
       std::vector<uint> memMask(max + 1);
-      for (int i = 0; i < max + 1; i++)
+      for (size_t i = 0; i < max + 1; i++)
         memMask[i] = arr.GetBit(i);
       stream << "Bit array: ";
       for (size_t i = 0; i < memMask.size(); i++) {

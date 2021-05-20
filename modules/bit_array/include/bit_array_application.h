@@ -11,7 +11,7 @@ class BitArrayApplication {
   std::string operator()(int argc, const char* argv[]) const;
  private:
   std::string help(const std::string& filename) const;
-  int checkPositiveNumber(const char* argv) const;
+  int retPositiveNumber(const char* argv) const;
 };
 
 #endif  // MODULES_BIT_ARRAY_INCLUDE_BIT_ARRAY_APPLICATION_H_

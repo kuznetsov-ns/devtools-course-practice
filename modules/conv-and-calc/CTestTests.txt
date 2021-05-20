@@ -44,6 +44,30 @@ set_tests_properties (${prefix}_can_Detect_Wrong_Value_Data2 PROPERTIES
     LABELS "${MODULE}")
 
 add_test(
+    NAME ${prefix}_can_Detect_Wrong_Value_Data3
+    COMMAND ${APPLICATION} OCT ab
+)
+set_tests_properties (${prefix}_can_Detect_Wrong_Value_Data3 PROPERTIES
+    PASS_REGULAR_EXPRESSION "ERROR: ab is invalid argument"
+    LABELS "${MODULE}")
+
+add_test(
+    NAME ${prefix}_can_Detect_Wrong_Value_Data4
+    COMMAND ${APPLICATION} HEX ab
+)
+set_tests_properties (${prefix}_can_Detect_Wrong_Value_Data4 PROPERTIES
+    PASS_REGULAR_EXPRESSION "ERROR: ab is invalid argument"
+    LABELS "${MODULE}")
+
+add_test(
+    NAME ${prefix}_can_Detect_Wrong_Value_Data5
+    COMMAND ${APPLICATION} ABOBA ab
+)
+set_tests_properties (${prefix}_can_Detect_Wrong_Value_Data5 PROPERTIES
+    PASS_REGULAR_EXPRESSION "ERROR: ABOBA is invalid argument"
+    LABELS "${MODULE}")
+
+add_test(
     NAME ${prefix}_can_With_Valid_Value_Argument1
     COMMAND ${APPLICATION} BIN 1000
 )

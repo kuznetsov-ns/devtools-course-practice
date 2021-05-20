@@ -19,6 +19,14 @@ std::string BitArrayApplication::help(const std::string& filename) const {
     "Example2: " + filename + " 0 4 5 7\n";
 }
 
+bool BitArrayApplication::validateNumberOfArguments(int argc,
+  const char* argv[]) const {
+  if (argc <= 1) {
+    return false;
+  }
+  return true;
+}
+
 int BitArrayApplication::retPositiveNumber(const char* argv) const {
   std::stringstream convert(argv);
   int result;
@@ -34,7 +42,7 @@ int BitArrayApplication::retPositiveNumber(const char* argv) const {
 std::string BitArrayApplication::operator()(int argc,
   const char* argv[]) const {
   try {
-    if (argc <= 1) {
+    if (!validateNumberOfArguments(argc, argv)) {
       return help(argv[0]);
     } else if (argc == 2) {
       int size = retPositiveNumber(argv[1]);

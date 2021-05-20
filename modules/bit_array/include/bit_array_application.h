@@ -10,6 +10,8 @@ class BitArrayApplication {
   BitArrayApplication() = default;
   std::string operator()(int argc, const char* argv[]) const;
  private:
+  bool validateNumberOfArguments(int argc,
+     const char* argv[]) const;
   std::string help(const std::string& filename) const;
   int retPositiveNumber(const char* argv) const;
 };
